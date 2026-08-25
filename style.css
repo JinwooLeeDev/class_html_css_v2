@@ -1,0 +1,94 @@
+/* 1단계 : 브라우저 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  margin-top: 10px;
+  color: lightgray;
+}
+
+body {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 320px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  /* box-shadow 인수 - x축 이동(0) , y축 이동(4), 번짐정도(20) */
+  text-align: center;
+}
+
+/* 프로필 사진 + 이름 */
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+.role {
+  font-size: 14px;
+  color: darkgrey;
+  margin-bottom: 10px;
+}
+
+/* 통계 + 뱃지 + 버튼 */
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 0;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+.stat > span {
+  font-size: 12px;
+  color: gray;
+}
+
+.card-skills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  /*
+  gap은 마진과 다르게 부모 요소에서 선언한다.
+  첫번째 / 마지막 여벽에 간격은 안주고 요소 사이의 간격에만 적용한다
+  */
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.badge {
+  background-color: #eef2ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+.btn-follow {
+  background-color: #4f46e5;
+  width: 275px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-follow:hover {
+  background-color: purple;
+}
