@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 추천 상품</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f4f4;
+        color: #111;
+        font-family: Arial, "Noto Sans KR", sans-serif;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        height: 70px;
+        padding: 0 22px;
+        background: #0878e8;
+      }
+
+      .logo {
+        flex: 0 0 auto;
+        margin: 0;
+        color: #fff;
+        font-size: 27px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .search-box {
+        display: flex;
+        width: 100%;
+        height: 44px;
+        overflow: hidden;
+        border-radius: 5px;
+        background: #fff;
+      }
+
+      .search-box input {
+        min-width: 0;
+        flex: 1;
+        padding: 0 13px;
+        border: 0;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .search-box button {
+        width: 62px;
+        border: 0;
+        background: #fff;
+        color: #111;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      main {
+        padding: 25px 21px 40px;
+      }
+
+      h2 {
+        margin: 0 0 22px;
+        font-size: 23px;
+        letter-spacing: -1px;
+      }
+
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        max-width: 980px;
+      }
+
+      .product-card {
+        min-width: 0;
+        padding: 17px;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .image-wrap {
+        position: relative;
+        width: 100%;
+        height: 191px;
+        overflow: hidden;
+        border-radius: 5px;
+        background: #ddd;
+      }
+
+      .image-wrap img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .badges {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .badge {
+        padding: 7px 9px;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .rocket {
+        background: #0878e8;
+      }
+      .sale {
+        background: #f10;
+      }
+
+      .product-name {
+        margin: 14px 0 8px;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .original-price {
+        margin: 0 0 6px;
+        color: #999;
+        font-size: 14px;
+        text-decoration: line-through;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        margin-bottom: 4px;
+      }
+
+      .price {
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .discount {
+        color: red;
+        font-size: 19px;
+        font-weight: 800;
+      }
+
+      .rating {
+        margin-bottom: 4px;
+        color: #ff8a00;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      .review {
+        letter-spacing: 0;
+      }
+
+      .arrival {
+        color: #0878e8;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 650px) {
+        .header {
+          gap: 12px;
+          padding: 0 14px;
+        }
+
+        .logo {
+          font-size: 22px;
+        }
+
+        main {
+          padding: 22px 14px;
+        }
+
+        .product-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .product-card {
+          padding: 12px;
+        }
+
+        .image-wrap {
+          height: 180px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .header {
+          height: auto;
+          padding-block: 12px;
+          flex-wrap: wrap;
+        }
+
+        .search-box {
+          flex-basis: 100%;
+        }
+
+        .product-list {
+          grid-template-columns: 1fr;
+        }
+
+        .image-wrap {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Coupang</h1>
+      <div class="search-box">
+        <input type="text" placeholder="찾고 싶은 상품을 검색해보세요" aria-label="상품 검색" />
+        <button type="button">검색</button>
+      </div>
+    </header>
+
+    <main>
+      <h2>오늘의 추천 상품</h2>
+
+      <section class="product-list" aria-label="추천 상품 목록">
+        <article class="product-card">
+          <div class="image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+              alt="숲속의 폭포"
+            />
+            <div class="badges"><span class="badge rocket">로켓배송</span></div>
+          </div>
+          <h3 class="product-name">무선 블루투스 이어폰</h3>
+          <p class="original-price">59,900원</p>
+          <div class="price-row"><span class="price">29,900원</span><span class="discount">50%</span></div>
+          <div class="rating">★★★★☆ <span class="review">(128)</span></div>
+          <div class="arrival">내일 도착</div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+              alt="야경이 보이는 거리"
+            />
+            <div class="badges"><span class="badge rocket">로켓배송</span><span class="badge sale">할인</span></div>
+          </div>
+          <h3 class="product-name">스테인리스 텀블러</h3>
+          <p class="original-price">25,000원</p>
+          <div class="price-row"><span class="price">15,900원</span><span class="discount">36%</span></div>
+          <div class="rating">★★★★★ <span class="review">(256)</span></div>
+          <div class="arrival">내일 도착</div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+              alt="초록색 다육식물"
+            />
+            <div class="badges"><span class="badge rocket">로켓배송</span><span class="badge sale">할인</span></div>
+          </div>
+          <h3 class="product-name">스테인리스 텀블러</h3>
+          <p class="original-price">25,000원</p>
+          <div class="price-row"><span class="price">15,900원</span><span class="discount">36%</span></div>
+          <div class="rating">★★★★★ <span class="review">(256)</span></div>
+          <div class="arrival">내일 도착</div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+              alt="푸른 하늘과 대관람차"
+            />
+            <div class="badges"><span class="badge rocket">로켓배송</span><span class="badge sale">할인</span></div>
+          </div>
+          <h3 class="product-name">스테인리스 텀블러</h3>
+          <p class="original-price">25,000원</p>
+          <div class="price-row"><span class="price">15,900원</span><span class="discount">36%</span></div>
+          <div class="rating">★★★★★ <span class="review">(256)</span></div>
+          <div class="arrival">내일 도착</div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=500&amp;q=80"
+              alt="잔잔한 물결 풍경"
+            />
+            <div class="badges"><span class="badge rocket">로켓배송</span><span class="badge sale">할인</span></div>
+          </div>
+          <h3 class="product-name">스테인리스 텀블러</h3>
+          <p class="original-price">25,000원</p>
+          <div class="price-row"><span class="price">15,900원</span><span class="discount">36%</span></div>
+          <div class="rating">★★★★★ <span class="review">(256)</span></div>
+          <div class="arrival">내일 도착</div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
