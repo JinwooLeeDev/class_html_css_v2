@@ -1,0 +1,46 @@
+:root {
+  --sp-black: #121212;
+  --sp-dark: #181818;
+  --sp-gray: #282828;
+  --sp-light: #b3b3b3;
+  --sp-green: #1db954;
+  --sp-white: #ffffff;
+  --player-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--sp-black);
+}
+
+.app-layout {
+  display: flex;
+}
+
+.logo {
+  margin-bottom: 20px;
+  color: var(--sp-white);
+}
+
+.sidebar {
+  display: block;
+  height: calc(100vh - var(--player-height));
+}
+
+.sidebar a{
+  display: block;
+}
+
+.menu {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.sidebar sidebar-item {
+  display: block;
+  margin-bottom: 20px;
+}
