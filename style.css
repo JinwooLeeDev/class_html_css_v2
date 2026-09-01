@@ -426,12 +426,49 @@ a {
   font-size: 12px;
 }
 
-.stick {
+.stick1 {
   background-color: var(--ad-primary);
   width: min(100%, 70px);
-  height: 60%;
+  height: 23%;
   border-radius: 4px 4px 0 0;
 }
+.stick2 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 68%;
+  border-radius: 4px 4px 0 0;
+}
+.stick3 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 57%;
+  border-radius: 4px 4px 0 0;
+}
+.stick4 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 55%;
+  border-radius: 4px 4px 0 0;
+}
+.stick5 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 80%;
+  border-radius: 4px 4px 0 0;
+}
+.stick6 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 40%;
+  border-radius: 4px 4px 0 0;
+}
+.stick7 {
+  background-color: var(--ad-primary);
+  width: min(100%, 70px);
+  height: 30%;
+  border-radius: 4px 4px 0 0;
+}
+
 
 
 .week {
@@ -446,7 +483,7 @@ a {
   text-align: center;
 }
 
-/* 반응형 */
+
 
 @media (max-width: 1000px) {
   .stat-row {
